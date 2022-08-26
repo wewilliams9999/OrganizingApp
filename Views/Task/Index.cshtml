@@ -1,0 +1,32 @@
+﻿@using Task = OrganizingApp.Models.Task;
+
+@model IEnumerable<Task>
+
+<h2>Tasks</h2>
+
+<div style="display: block">
+    <a href="/Task/InsertTask/">Create a New Task</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>taskId</th>
+        <th>taskDesc</th>
+        <th>notes</th>
+        <th>location</th>
+        <th>isCompleted</th>
+
+    </tr>
+
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td><a href=/Task/ViewTask/@task.taskId>@task.taskId</a></td>
+            @*above will make each taskId on our index page take us to that individual task*@
+            <td>@task.taskDesc</td>
+            <td>@task.notes</td>
+            <td>@task.locationId</td>
+            <td>@task.isCompleted</td>
+        </tr>
+    }
+</table>
