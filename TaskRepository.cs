@@ -30,17 +30,17 @@ namespace OrganizingApp
         public void UpdateTask(Task task)
         {
             _conn.Execute("UPDATE task SET taskDesc = @taskDesc, notes = @notes, isCompleted = @isCompleted WHERE taskId = @id",
-                new { taskDesc = task.taskDesc, notes = task.notes, completed = task.isCompleted });
+                new { taskDesc = task.TaskDesc, notes = task.Notes, completed = task.IsCompleted });
         }
 
         public void InsertTask(Task taskToInsert)
         {
             _conn.Execute("INSERT INTO task (TASKDESC, NOTES, ISCOMPLETED, LOCATIONID) VALUES (@taskDesc, @notes, @isCompleted, @locationId);",
                     new
-                    {   taskDesc = taskToInsert.taskDesc,
-                        notes = taskToInsert.notes,
-                        isCompleted = taskToInsert.isCompleted,
-                        locationId = taskToInsert.locationId
+                    {   taskDesc = taskToInsert.TaskDesc,
+                        notes = taskToInsert.Notes,
+                        isCompleted = taskToInsert.IsCompleted,
+                        locationId = taskToInsert.LocationId
                     });
         }
 
@@ -61,7 +61,7 @@ namespace OrganizingApp
         public void DeleteTask(Task task)
         {
             _conn.Execute("DELETE FROM Task WHERE taskId = @id;",
-                            new { id = task.taskId });
+                            new { id = task.TaskId });
         }
     }
 }

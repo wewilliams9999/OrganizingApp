@@ -21,12 +21,12 @@
     @foreach (var task in Model)
     {
         <tr>
-            <td><a href=/Task/ViewTask/@task.taskId>@task.taskId</a></td>
+            <td><a href=/Task/ViewTask/@task.TaskId>@task.TaskId</a></td>
             @*above will make each taskId on our index page take us to that individual task*@
-            <td>@task.taskDesc</td>
-            <td>@task.notes</td>
-            <td>@task.locationId</td>
-            <td>@task.isCompleted</td>
+            <td>@task.TaskDesc</td>
+            <td>@task.Notes</td>
+            <td>@task.LocationId</td>
+            <td>@task.IsCompleted</td>
         </tr>
     }
 </table>

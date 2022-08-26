@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrganizingApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Task = OrganizingApp.Models.Task;
 
 namespace OrganizingApp.Controllers
@@ -33,6 +30,8 @@ namespace OrganizingApp.Controllers
             var task = repo.GetTask(id);
 
             return View(task);
+            //since we are passing in task as an argument in this View method...
+            //that will serve as the Model we will work with in our ViewTask.cshtml View 
         }
 
         public IActionResult UpdateTask(int id)
@@ -51,7 +50,7 @@ namespace OrganizingApp.Controllers
         {
             repo.UpdateTask(task); //updates the task in the database
 
-            return RedirectToAction("ViewTask", new { id = task.taskId });
+            return RedirectToAction("ViewTask", new { id = task.TaskId });
         }
 
         public IActionResult InsertTask()

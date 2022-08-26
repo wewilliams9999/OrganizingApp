@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrganizingApp.Models;
 using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace OrganizingApp.Controllers
 {

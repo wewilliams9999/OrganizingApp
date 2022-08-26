@@ -3,27 +3,27 @@
 
 @model Task
 
-<h2>Update @Model.taskDesc</h2>
+<h2>Update @Model.TaskDesc</h2>
 
 @using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
 {
-    <input asp-for="taskId" type="hidden" value="@Model.taskId" />
+    <input asp-for="TaskId" type="hidden" value="@Model.TaskId" />
 
-    <label asp-for="taskDesc" class="control-label">taskDesc</label>
+    <label asp-for="TaskDesc" class="control-label">taskDesc</label>
 
-    <input type="text" taskDesc="taskDesc" class="form-control" value="@Model.taskDesc" />
+    <input type="text" taskDesc="taskDesc" class="form-control" value="@Model.TaskDesc" />
 
-    <label asp-for="notes" class="control-label">Notes</label>
+    <label asp-for="Notes" class="control-label">Notes</label>
 
-    <input type="text" name="Notes" class="form-control" value="@Model.notes" />
+    <input type="text" name="Notes" class="form-control" value="@Model.Notes" />
 
-    <label asp-for="isCompleted" class="control-label">IsCompleted</label>
+    <label asp-for="IsCompleted" class="control-label">IsCompleted</label>
 
-    <input type="text" name="IsCompleted" class="form-control" value="@Model.isCompleted" />
+    <input type="text" name="IsCompleted" class="form-control" value="@Model.IsCompleted" />
 
-    <label asp-for="locationId" class="control-label">Location</label>
+    <label asp-for="LocationId" class="control-label">Location</label>
 
-    <input type="text" name="Location" class="form-control" value="@Model.locationId" />
+    <input type="text" name="Location" class="form-control" value="@Model.LocationId" />
 
     <input type="submit" value="Update Task" class="btn btn-primary" />
 }

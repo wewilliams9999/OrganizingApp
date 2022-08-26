@@ -6,10 +6,10 @@
 <h2>Create a new Task</h2>
 @using (Html.BeginForm("InsertTaskToDatabase", "Task", "Post"))
 {
-    <input asp-for="taskId" type="hidden" value="" />
-    <label asp-for="taskDesc" class="control-label">TaskDesc</label>
+    <input asp-for="TaskId" type="hidden" value="" />
+    <label asp-for="TaskDesc" class="control-label">TaskDesc</label>
     <input type="text" name="TaskDesc" class="form-control" value="" />
-    <label asp-for="notes" class="control-label">Notes</label>
+    <label asp-for="Notes" class="control-label">Notes</label>
     <input type="text" name="Notes" class="form-control" />
     <div class="form-group">
         <label for="">Select a Location</label>
