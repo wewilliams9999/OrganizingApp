@@ -7,10 +7,13 @@
 @using (Html.BeginForm("InsertTaskToDatabase", "Task", "Post"))
 {
     <input asp-for="TaskId" type="hidden" value="" />
-    <label asp-for="TaskDesc" class="control-label">TaskDesc</label>
+
+    <label asp-for="TaskDesc" class="control-label">Task Description</label>
     <input type="text" name="TaskDesc" class="form-control" value="" />
+
     <label asp-for="Notes" class="control-label">Notes</label>
     <input type="text" name="Notes" class="form-control" />
+
     <div class="form-group">
         <label for="">Select a Location</label>
         <select class="form-control" name="LocationId" value="">
@@ -20,5 +23,9 @@
             }
         </select>
     </div>
+
+    <label asp-for="IsCompleted" class="control-label">Is the task completed?</label>
+    <input type="text" name="IsCompleted" class="form-control" value="@Model.IsCompleted" />
+
     <input type="submit" value="Create Task" class="btn btn-primary" />
 }

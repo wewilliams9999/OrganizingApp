@@ -157,6 +157,7 @@ h3, .h3 {
 
 h4, .h4 {
     font-size: calc(1.275rem + 0.3vw);
+    text-align: center;
 }
 
 @media (min-width: 1200px) {

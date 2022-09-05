@@ -9,17 +9,30 @@
 {
     <input asp-for="TaskId" type="hidden" value="@Model.TaskId" />
 
-    <label asp-for="TaskDesc" class="control-label">taskDesc</label>
+    <label asp-for="TaskDesc" class="control-label">Task Description</label>
 
-    <input type="text" taskDesc="taskDesc" class="form-control" value="@Model.TaskDesc" />
+    <input type="text" name="taskDesc" class="form-control" value="@Model.TaskDesc" />
 
+    
     <label asp-for="Notes" class="control-label">Notes</label>
 
     <input type="text" name="Notes" class="form-control" value="@Model.Notes" />
 
-    <label asp-for="IsCompleted" class="control-label">IsCompleted</label>
+    <div class="form-group"> 
+        @*ask in code review - i copied this exactly from InsertTask view and it works there, but when i added this here, i get a NullReferenceException- why?*@
+        <label for="">Select a Location</label>
+        <select class="form-control" name="LocationId" value="">
+            @foreach (var loc in Model.Locations)
+            {
+                <option value="@loc.LocationId"> @loc.Name</option>
+            }
+        </select>
+    </div>
+    
+    <label asp-for="IsCompleted" class="control-label">Is the task completed?</label>
 
     <input type="text" name="IsCompleted" class="form-control" value="@Model.IsCompleted" />
 
+   
     <input type="submit" value="Update Task" class="btn btn-primary" />
 }

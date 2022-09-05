@@ -25,12 +25,14 @@ namespace OrganizingApp
         public Task GetTask(int id)
         {
             return _conn.QuerySingle<Task>("SELECT * FROM TASK WHERE TASKID = @id", new { id = id });
+            //this is the QuerySingle<Product> Dapper method which returns a single row
+            //parameterized query that will prevent SQL injection
         }
 
         public void UpdateTask(Task task)
         {
-            _conn.Execute("UPDATE task SET taskDesc = @taskDesc, notes = @notes, isCompleted = @isCompleted WHERE taskId = @id",
-                new { taskDesc = task.TaskDesc, notes = task.Notes, completed = task.IsCompleted });
+            _conn.Execute("UPDATE task SET TaskDesc = @taskDesc, Notes = @notes, LocationId =@locationId, IsCompleted = @isCompleted WHERE TaskId = @id",
+                new { taskDesc = task.TaskDesc, notes = task.Notes, isCompleted = task.IsCompleted, locationId = task.LocationId, id = task.TaskId   });
             //parameterized to prevent SQL injection;
         }
 
