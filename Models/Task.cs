@@ -10,7 +10,7 @@ namespace OrganizingApp.Models
         public int TaskId { get; set; }
         public string? TaskDesc { get; set; }
         public string? Notes { get; set; }
-        public bool IsCompleted { get; set; }
+        public char IsCompleted { get; set; }
 
         public int LocationId { get; set; }
 

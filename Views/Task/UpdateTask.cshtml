@@ -5,7 +5,7 @@
 
 <h2>Update @Model.TaskDesc</h2>
 
-@using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
+@using (Html.BeginForm("UpdateTaskToDatabase", "Task", "Post"))
 {
     <input asp-for="TaskId" type="hidden" value="@Model.TaskId" />
 
@@ -20,10 +20,6 @@
     <label asp-for="IsCompleted" class="control-label">IsCompleted</label>
 
     <input type="text" name="IsCompleted" class="form-control" value="@Model.IsCompleted" />
-
-    <label asp-for="LocationId" class="control-label">Location</label>
-
-    <input type="text" name="Location" class="form-control" value="@Model.LocationId" />
 
     <input type="submit" value="Update Task" class="btn btn-primary" />
 }

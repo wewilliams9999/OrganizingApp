@@ -31,6 +31,7 @@ namespace OrganizingApp
         {
             _conn.Execute("UPDATE task SET taskDesc = @taskDesc, notes = @notes, isCompleted = @isCompleted WHERE taskId = @id",
                 new { taskDesc = task.TaskDesc, notes = task.Notes, completed = task.IsCompleted });
+            //parameterized to prevent SQL injection;
         }
 
         public void InsertTask(Task taskToInsert)

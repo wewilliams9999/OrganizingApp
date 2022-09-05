@@ -16,7 +16,7 @@
         <select class="form-control" name="LocationId" value="">
             @foreach (var loc in Model.Locations)
             {
-                <option value="@loc.LocationId">@loc.LocationId @loc.Name</option>
+                <option value="@loc.LocationId"> @loc.Name</option>
             }
         </select>
     </div>

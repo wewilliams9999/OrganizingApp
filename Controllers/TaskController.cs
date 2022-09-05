@@ -50,7 +50,7 @@ namespace OrganizingApp.Controllers
         {
             repo.UpdateTask(task); //updates the task in the database
 
-            return RedirectToAction("ViewTask", new { id = task.TaskId });
+            return RedirectToAction("ViewTask", new { id = task.TaskId }); //return a redirect
         }
 
         public IActionResult InsertTask()
