@@ -21,7 +21,7 @@
     <div class="form-group"> 
         @*ask in code review - i copied this exactly from InsertTask view and it works there, but when i added this here, i get a NullReferenceException- why?*@
         <label for="">Select a Location</label>
-        <select class="form-control" name="LocationId" value="">
+        <select class="form-control" name="LocationId" value="@Model.LocationId">
             @foreach (var loc in Model.Locations)
             {
                 <option value="@loc.LocationId"> @loc.Name</option>
