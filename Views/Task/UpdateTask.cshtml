@@ -19,10 +19,9 @@
     <input type="text" name="Notes" class="form-control" value="@Model.Notes" />
 
     <div class="form-group"> 
-        @*ask in code review - i copied this exactly from InsertTask view and it works there, but when i added this here, i get a NullReferenceException- why?*@
         <label for="">Select a Location</label>
         <select class="form-control" name="LocationId" value="@Model.LocationId">
-            @foreach (var loc in Model.Locations)
+            @foreach (var loc in ViewBag.Locations)
             {
                 <option value="@loc.LocationId"> @loc.Name</option>
             }

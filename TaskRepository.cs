@@ -56,15 +56,6 @@ namespace OrganizingApp
             return _conn.Query<Location>("SELECT * FROM location;");
         }
 
-        public Task AssignLocation()
-        {
-            var locationList = GetLocations();
-            var task = new Task();
-            task.Locations = locationList;
-
-            return task;
-        }
-
         public void DeleteTask(Task task)
         {
             _conn.Execute("DELETE FROM Task WHERE taskId = @id;",

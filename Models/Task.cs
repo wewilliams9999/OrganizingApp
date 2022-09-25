@@ -13,8 +13,5 @@ namespace OrganizingApp.Models
         public string? IsCompleted { get; set; }
 
         public int LocationId { get; set; }
-
-        public IEnumerable<Location>? Locations { get; set; }
-        
     }
 }

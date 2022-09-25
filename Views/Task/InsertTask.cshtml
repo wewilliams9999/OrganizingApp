@@ -17,7 +17,7 @@
     <div class="form-group">
         <label for="">Select a Location</label>
         <select class="form-control" name="LocationId" value="">
-            @foreach (var loc in Model.Locations)
+            @foreach (var loc in ViewBag.Locations)
             {
                 <option value="@loc.LocationId"> @loc.Name</option>
             }

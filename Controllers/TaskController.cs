@@ -37,6 +37,7 @@ namespace OrganizingApp.Controllers
         public IActionResult UpdateTask(int id)
         {
             Task task = repo.GetTask(id);
+            ViewBag.Locations = repo.GetLocations();
 
             if (task == null)
             {
@@ -55,9 +56,9 @@ namespace OrganizingApp.Controllers
 
         public IActionResult InsertTask()
         {
-            var task = repo.AssignLocation();
+            ViewBag.Locations = repo.GetLocations();
 
-            return View(task);
+            return View(new Task());
         }
 
         public IActionResult InsertTaskToDatabase(Task taskToInsert)
