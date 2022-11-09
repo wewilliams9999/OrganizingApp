@@ -33,6 +33,8 @@ namespace OrganizingApp.Controllers
         public IActionResult ViewTask(int id)
         {
             var task = repo.GetTask(id);
+            
+            task.Location = repo.GetLocation(task.LocationId);
 
             return View(task);
             //since we are passing in task as an argument in this View method...
