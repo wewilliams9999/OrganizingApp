@@ -56,6 +56,11 @@ namespace OrganizingApp
             return _conn.Query<Location>("SELECT * FROM location;");
         }
 
+        public Location GetLocation(int id)
+        {
+            return _conn.QuerySingle<Location>("SELECT * FROM Location where LocationId = @locationId", new { locationId = id });
+        }
+
         public void DeleteTask(Task task)
         {
             _conn.Execute("DELETE FROM Task WHERE taskId = @id;",

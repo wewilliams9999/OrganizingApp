@@ -8,6 +8,7 @@ namespace OrganizingApp.Models
     public class Task
     {
         public int TaskId { get; set; }
+        public Location Location { get; set; }
         public string? TaskDesc { get; set; }
         public string? Notes { get; set; }
         public string? IsCompleted { get; set; }

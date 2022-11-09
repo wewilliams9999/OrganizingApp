@@ -22,6 +22,11 @@ namespace OrganizingApp.Controllers
         {
             var tasks = repo.GetAllTasks(); 
 
+            foreach (var task in tasks)
+            {
+                task.Location = repo.GetLocation(task.LocationId);
+            }
+
             return View(tasks);
         }
 

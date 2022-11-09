@@ -19,6 +19,8 @@ namespace OrganizingApp
 
         public IEnumerable<Location> GetLocations();
 
+        public Location GetLocation(int id);
+
         public void DeleteTask(Task task);
     }
 }
